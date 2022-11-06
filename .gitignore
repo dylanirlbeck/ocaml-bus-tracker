@@ -1,0 +1,5 @@
+*.swp # TODO might not be necessary
+_build/
+.merlin
+*.install
+_opam/
