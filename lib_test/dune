@@ -1,0 +1,11 @@
+(executables
+  (libraries cohttp-lwt-unix bus_tracker)
+  (names integration))
+
+(rule (copy config.ml.in config.ml))
+
+(alias
+  (name DEFAULT)
+  (deps
+    integration.exe))
+  

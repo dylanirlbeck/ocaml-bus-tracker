@@ -2,4 +2,5 @@
 _build/
 .merlin
 *.install
+lib_test/config.ml.in
 _opam/
