@@ -11,7 +11,9 @@ module Gettime = struct
     let uri =
       Uri.with_query URI.gettime [ ("key", [ key ]); ("format", [ "json" ]) ]
     in
+    (*TODO Add better error handling with response.*)
     Client.get uri >>= fun (_resp, body) ->
     body |> Cohttp_lwt.Body.to_string >|= Yojson.Safe.from_string
     >|= Types.response_of_yojson
+    >|= fun gettime_response -> gettime_response.bustime_response
 end
