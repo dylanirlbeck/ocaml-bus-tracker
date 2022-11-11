@@ -8,5 +8,5 @@
 *)
 
 module Gettime : sig
-  val run : string -> Types.gettime_response
+  val run : string -> Types.gettime Lwt.t
 end

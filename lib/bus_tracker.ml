@@ -14,6 +14,6 @@ module Gettime = struct
     (*TODO Add better error handling with response.*)
     Client.get uri >>= fun (_resp, body) ->
     body |> Cohttp_lwt.Body.to_string >|= Yojson.Safe.from_string
-    >|= Types.response_of_yojson
+    >|= Types.gettime_response_of_yojson
     >|= fun gettime_response -> gettime_response.bustime_response
 end
